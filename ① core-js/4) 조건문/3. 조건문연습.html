@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!--
+  점수를 입력받아서
+  점수가 90점이상, 다시 조건을 검사함
+  점수가 95점이상, A+ / 아니면 A0
+  80점대 B
+  70점대 C
+  60점대 D
+  그 이하 F
+  출력 Alert
+ -->
+  <script>
+
+    var score = +prompt('점수를 입력하세요.');
+
+    if (score>=90) {
+      if (score>=95) {
+        alert('A+');
+      } else {
+        alert('A0');
+      }
+    } else if (score>=80) {
+      alert('B');
+    } else if (score>=70) {
+      alert('C');
+    } else if (score>=60) {
+      alert('D');
+    } else {
+      alert('F');
+    }
+    alert('시험 수고하셨습니다.');
+
+
+  </script>
+
+</body>
+
+</html>
