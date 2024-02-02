@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var x = +prompt(`정수를 입력하시오.`);
+    var total = 0;
+
+    for (y = 1; x >= y; y++) {
+      if (x % y === 0) {
+        total++;
+      }
+    }
+    if (total === 2) {
+      console.log(`${x}은(는) 소수입니다.`);
+    } else {
+      console.log(`${x}은(는) 소수가 아닙니다.`);
+    }
+
+    console.log('--------------------------------');
+
+    for (var j = 2; x % j !== 0; j++) {}
+    
+    console.log(`${x}은(는) ${x === j ? '소수입니다.' : '소수가 아닙니다.'}`);
+
+
+  </script>
+</body>
+
+</html>

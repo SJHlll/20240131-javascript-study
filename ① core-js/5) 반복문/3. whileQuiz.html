@@ -9,8 +9,8 @@
 
 <body>
 
-  <script>    
-  /*
+  <script>
+    /*
     1. 정수를 두개 입력받으세요. (x, y)
     2. x부터 y까지의 누적합계를 while을 사용하여 구하는 코드를 작성하세요.
     ex) 입력: 3, 7 -> "3부터 7까지의 누적합계: 25"
@@ -22,16 +22,23 @@
     입력: 7, 3 -> "3부터 7까지의 누적합계: 25")
     - while문을 if else 로 나눠서 두번 쓰는 것은 지양하겠습니다.
    */
-   var x = +prompt(`x값을 입력하시오.`);
-   var y = +prompt(`y값을 입력하시오.`);
-   
-   while (x=y) {
-    console.log(`${x}에서 ${y}까지 더한 값은 ${x}`);
+    var x = +prompt(`x값을 입력하시오.`);
+    var y = +prompt(`y값을 입력하시오.`);
+    var total = 0; // 합계를 저장할 곳
+    var n = x; // x의 값을 미리 저장
 
-    x++;
-   }
-   
+    if (x > y) {
+      var m = y; // y의 값을 미리 저장
+      y = x; // y를 저장하고 남은거 x주고
+      x = m; // x한테 저장한 y값 줌
+    }
+    
+    while (x <= y) {
+      total += x;
+      x++;
+    }
 
+    console.log(`${n}부터 ${y}까지의 누적합계는 ${total}이다.`);
   </script>
 
 </body>
