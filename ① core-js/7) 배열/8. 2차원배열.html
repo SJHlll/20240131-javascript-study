@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    // 반 학생 4과목 점수 (국영수탐)
+    // var kim = [67,89,92,32];
+    // var lee = [100,87,55,67];
+    // var park = [23,44,100,22];
+
+    var ourstudentscore = [
+    [67,89,92,32],
+    [100,87,55,67],
+    [23,44,100,22]
+    ];
+
+    console.log(ourstudentscore);
+    console.log(ourstudentscore[0]);
+    console.log(ourstudentscore[0][2]);
+    
+    console.log('--------------------------------------------');
+
+    // 반평균
+    
+    // 한 학생의 평균
+    var ouraverage = 0;
+    
+    for (studentscore of ourstudentscore) {
+      // studentscore 변수에는 한 학생의 점수 배열이 전달됨
+
+      // 한 학생의 4과목 총점
+      var eachtotal = 0;
+      
+      // score 변수에는 한 학생의 점수가 하나씩 전달됨
+      for (var score of studentscore) {
+        // eachtotal에 4과목 점수를 누적해서 더함
+        eachtotal += score;
+      }
+
+      // 한 학생의 평균점수
+      var eachaverage = eachtotal / studentscore.length; // 한 학생의 점수합계를 과목수로 나눔
+
+      ouraverage += eachaverage;
+      
+    }
+
+    var classaverage = ouraverage / ourstudentscore.length;
+    console.log(`반 평균 : ${Math.round(classaverage*100)/100}점`);
+
+
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    /*
+    - Quiz. 
+    아래 요구사항에 맞는 코드를 작성하고 
+    브라우저에서 실행하여 테스트하세요.
+    - 요구사항
+    1. kakao 변수에 배열 
+    ['무지', '네오', '어피치', '라이언', '제이지']
+    을 저장하세요.   
+    2. 사용자에게 삭제할 멤버 이름을 입력받고 (confirm 함수로 다시 한 번 확인) 
+    해당 멤버를 배열에서 삭제시킨 뒤
+    삭제 완료 후의 배열을 출력해서 보여주세요.
+    3. 배열에 없는 이름을 입력하면 'xxx는 잘못된 이름입니다.'라고 
+    출력한 후 다시 삭제할 이름을 입력할 수 있도록 하세요.
+    4. 모두를 정확하게 삭제할 때까지 프로그램은 계속되어야 합니다.
+    */
+
+    var kakao = ['무지', '네오', '어피지', '라이언', '제이지'];
+
+    // while (kakao.length) -> kakao.length의 값이 1이라도 있으면 true, 0이면 false라 이렇게 해도 됨
+
+    while (kakao.length) {
+      var del = prompt(`삭제할 캐릭터를 입력하세요. \n 현재 멤버 : ${kakao}`);
+
+      var index = kakao.indexOf(del); // 이름에 맞는 인덱스 탐섹
+
+      if (index === -1) {
+        alert(`${del}은(는) 잘못된 이름입니다.`);
+      } else {
+        kakao.splice(index,1);
+        console.log(`${del} 삭제 완료.\n남은 캐릭터 : ${kakao}`);
+      }
+    }
+
+    // while (true) {
+    //   var del = prompt(`삭제할 캐릭터를 입력하세요. \n 현재 멤버 : ${kakao}`);
+    //   console.log(`남은 캐릭터 : ${kakao}`);
+    //   console.log('=====================');
+    //   if (kakao.includes(del)) {
+    //     if (confirm(`${del}을(를) 삭제하시겠습니까?`)) {
+    //       // var index = kakao.indexOf(del);
+    //       // kakao.splice(index,1);
+    //       kakao.splice(kakao.indexOf(del), 1);
+    //       alert(`${del} 삭제 완료`);
+    //     }
+    //   } else alert(`${del}은(는) 잘못된 이름입니다.`);
+
+    //   console.log(`${del} 삭제 완료`);
+
+    //   if (kakao.length === 0) break;
+    // }
+    // alert(`남은 캐릭터 없음!`);
+    // console.log(`남은 캐릭터 : ${kakao}`);
+
+  </script>
+
+</body>
+
+</html>

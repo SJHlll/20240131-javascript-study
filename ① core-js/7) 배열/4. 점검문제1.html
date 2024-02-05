@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    /*
+   - Quiz. 
+   아래 요구사항에 맞는 코드를 작성하고 
+   브라우저에서 실행하여 테스트하세요.
+   - 요구사항
+1. prompt 창을 띄워 사용자에게 숫자를 입력해 달라고 요청한 후, 
+   입력받은 값들을 배열에 순차적으로 저장합니다.
+   
+2. '그만'이라고 입력하면 질문을 멈추고
+   입력했던 숫자배열과 숫자의 총합(배열 요소의 합)을 계산하여 출력하세요.
+*/
+    // var num = [];
+
+    // while (true) {
+
+
+    //   var input = +prompt(`숫자를 입력하세요. 그만을 입력하면 종료합니다.`)
+
+    //   if (input === `그만`) {
+    //     break;
+    //   }
+
+    //   if (input === Number) {
+    //     num.push(input)
+    //     continue;
+    //   }
+
+    // }
+
+    // 숫자를 저장할 배열
+    var num = [];
+
+    while (true) {
+
+      // + 붙이면 숫자만 취급해서 +prompt가 아닌 prompt를 해야함. prompt를 하면 그만 명령어 시행가능
+      var input = prompt(`숫자를 입력하세요. 그만을 입력하면 종료합니다.`)
+
+
+      // confirm = 확인, 취소 버튼이 있는 알림
+      // 확인 누르면 true, 취소 누르면 false
+      if (input === '그만') {
+        if (confirm(`진짜?`)) break;
+        else continue;
+      }
+
+      // 아무것도 입력 안하면 나옴
+      if (!input) {
+        alert(`값을 제대로 입력하세요`);
+        continue;
+      }
+
+      // 여기도 +input 해야함
+      num.push(+input)
+    }
+
+    // 총합 구하기
+    var total = 0;
+
+    // for (var i = 0; i < num.length; i++) {
+    //   total += num[i];
+    // }
+
+    for(var n of num) {
+      total += n;
+    }
+
+    alert(`입력한 숫자 목록 : ${num} \n입력한 숫자 총합 : ${total}`)
+
+
+  </script>
+
+</body>
+
+</html>
