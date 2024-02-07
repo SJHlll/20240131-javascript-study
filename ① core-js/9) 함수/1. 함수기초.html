@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  함수의 선언
+  함수의 이름은 동사적 기능이 내포되게 짓는다.
+ -->
+  <script>
+    function calcTotal(start, end) {
+      console.log('함수가 호출됨!');
+      var total = 0;
+      for (var n = start; n<= end; n++) {
+        total += n;
+      }
+      return total;
+    }
+
+    
+    // 함수의 호출
+    // 함수의 return값은 함수를 호출한 곳으로 반환된다.
+    console.log(calcTotal(60,69));
+    
+    
+    // 함수의 호출 행위 자체가 하나의 return값으로 처리될 수 있기에
+    // 반환값을 변수에 대입하는 것도 가능하다.
+    var result = calcTotal(1,50);
+    console.log(result);
+    
+
+    function add(n1, n2) {
+      return n1 + n2;
+    }
+    
+    console.log(add(10,20));
+    
+
+    // 함수를 리터럴 방식으로 선언
+    var add2 = function(n1,n2) {
+      return n1 + n2;
+    }
+
+    console.log(add2(10,20));
+
+
+    // 함수를 변수에 할당할 수 있다.
+    var ct = calcTotal;
+    var result2 = ct(1,100);
+    console.log(result2);
+
+    </script>
+
+</body>
+
+</html>

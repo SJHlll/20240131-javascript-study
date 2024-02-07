@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    /* 
+Q. n의 약수의 개수를 구하기
+1. 정수 n을 전달받아 n의 약수들을 출력하고 
+약수의 개수를 리턴하는 함수 calcDivisor를 정의하세요.
+2. 약수의 출력은 함수 내부에서 이뤄져야 합니다.
+3. 힌트) 전달받은 n을 1부터 n까지 지속적으로 나누어
+ 나누어 떨어졌을 시 약수의 개수 카운트를 1증가시키고 출력.
+
+ 약수들은 배열에 담아서 한번에 출력해주세요. (가로출력)
+*/
+
+    function calcDivisor(n) {
+      var space = []; // 약수들을 배열로 담을 공간, 빈 공간 []
+      for (var i = 1; i <= n; i++) {
+        if (n % i === 0) {
+          space.push(i); // 정수의 약수를 출력받아 빈 공간 []로 push해 배열에 추가함
+        }
+      }
+      console.log(n + "의 약수 :" + space.join(", "));
+      return space.length; // .length를 붙여야 배열복귀됨
+    }
+
+    var input = 720720;
+    console.log(input + '의 약수의 개수는 ' + calcDivisor(input) + '개입니다.');
+    // var space = []; , space.push();
+
+    // 위는 배열이 있음
+    console.log('=================================');
+    // 밑은 배열이 없음
+
+    function nope(a) {
+      var cnt = 0;
+      console.log(a + "의 약수 :");
+      for (var d = 1; d <= a; d++) {
+        if (a % d === 0) {
+          cnt++;
+          console.log(d);
+        }
+      }
+      return cnt;
+    }
+
+    var a = 1894;
+    console.log(a + '의 약수의 개수는 ' + nope(a) + '개입니다.');
+
+  </script>
+
+</body>
+
+</html>
