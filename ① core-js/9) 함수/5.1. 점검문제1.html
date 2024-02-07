@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    
+    function calcDivisor(n) {
+      var div = [];
+      for (var i = 1; i <= n; i++) {
+        if (n % i === 0) {
+          div.push(i);
+        }
+      }
+      console.log(`${n}의 약수 : ${div}`);
+      return div.length;
+    }
+
+    var divcount = calcDivisor(10);
+    console.log(`약수의 개수 : ${divcount}개`);
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

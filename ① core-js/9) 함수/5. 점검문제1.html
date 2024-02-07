@@ -29,10 +29,11 @@ Q. n의 약수의 개수를 구하기
         }
       }
       console.log(n + "의 약수 :" + space.join(", "));
-      return space.length; // .length를 붙여야 배열복귀됨
+      return space.length;
+      // .length를 붙여야 배열복귀됨. 배열 안의 약수의 개수가 곧 length의 개수이기 때문
     }
 
-    var input = 720720;
+    var input = +prompt(`정수를 하나 입력해주세요.`);
     console.log(input + '의 약수의 개수는 ' + calcDivisor(input) + '개입니다.');
     // var space = []; , space.push();
 
