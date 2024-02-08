@@ -92,9 +92,26 @@
 
     // 회원 정보 중에 회원 이름만 전부 모아서 배열에 담기
 
-    
+    const userNames = userList.map(user => user.userName);
+    console.log(userNames);
     
 
+    
+    function map2(callback) {
+      const mappedarray = [];
+      for (let user of userList) {
+        mappedarray.push(callback(user));
+      }
+      return mappedarray;
+    }
+
+    const userNames2 = map2(user => user.userName);
+    console.log(userNames2);
+
+    const addressList = map2(user => user.address);
+    console.log(addressList);
+
+    
   </script>
 
 </body>
