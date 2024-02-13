@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button type="button" id="btn1">Click</button>
+  <button type="button" id="btn2">Click</button>
+  <button type="button" id="btn3">Click</button>
+
+  <script>
+
+    // 이벤트 핸들러 정의
+    function Hello() {
+      alert('Hello');
+    }
+
+    const $btn1 = document.getElementById('btn1');
+    const $btn2 = document.getElementById('btn2');
+    const $btn3 = document.getElementById('btn3');
+
+    // $btn1.onclick = Hello;
+
+    $btn1.onclick = function () {
+      alert('hihihi');
+    }
+    // 중복안됨
+    $btn1.onclick = function () {
+      alert('nohi');
+    }
+
+    $btn2.onmouseover = function () {
+      alert('?');
+    }
+
+    $btn3.onmouseout = () => alert('qq');
+
+    // 핸들러 제거
+    $btn3.onmouseout = null;
+
+  </script>
+
+</body>
+
+</html>
