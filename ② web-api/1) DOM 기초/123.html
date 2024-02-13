@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="wrap">
+    <ul id="list">
+      <li>리스트1</li>
+      <li>리스트2</li>
+      <li>리스트3</li>
+      <li>리스트4</li>
+      <li>리스트5</li>
+      <li>리스트6</li>
+      <li>리스트7</li>
+    </ul>
+  </div>
+
+  <script>
+    const $hi = document.querySelectorAll('#wrap #list li');
+
+    $hi
+      .forEach(($l, index) => {
+        if (index % 2 === 0) {
+          $l.style.backgroundColor = 'lavender'
+          $l.style.marginLeft = '20px'
+        } else {
+          $l.style.background = 'url(./bg_overright.gif)'
+          $l.style.height = '200px'
+        }
+        
+        if (index <=3) {
+          $l.style.color = 'red'
+          $l.style.paddingBottom = '10px'
+          $l.style.textAlign = 'center'
+        } else if (index === $hi.length -1) {
+          $l.style.color = 'blue'
+          $l.style.height = '100px'
+        } else {
+          $l.style.fontSize = '28px'
+          $l.style.fontWeight = 'bold'
+        }
+      })
+  </script>
+
+</body>
+
+</html>
