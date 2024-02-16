@@ -147,3 +147,38 @@ section.main .number-wrapper h2 em {
   opacity: 0;
   z-index: -100;
 }
+
+/* 사용자가 아이콘 선택 시 up or down 아이콘 애니메이션 */
+.result div.selected {
+  animation: jumping 0.3s infinite linear alternate;
+}
+@keyframes jumping {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(-20px);
+  }
+}
+
+#finish.show {
+  animation: showUp 1s linear forwards;
+}
+@keyframes showUp {
+  0% {
+      opacity: 0;
+      top: -50%;
+  }
+  50% {
+      opacity: 0.5;
+      top: 0;
+  }
+  100% {
+      opacity: 1;
+      top: 50%;
+      z-index: 100;
+  }
+}
