@@ -16,6 +16,8 @@ const calculate = type => {
   const originalResult = currentResult;
   const enteredNumber = getUserNumberInput();
 
+
+
   let mark;
 
   if (type === 'ADD') {
@@ -28,6 +30,10 @@ const calculate = type => {
     mark = 'x'
     currentResult *= enteredNumber;
   } else if (type === 'DIV') {
+    if (!enteredNumber) {
+      alert('오류');
+      return;
+    }
     mark = '/'
     currentResult /= enteredNumber;
   }
@@ -60,36 +66,28 @@ const writeToLog = (operation, prevResult, number, result) => {
 };
 
 // 로그 이력을 화면에 렌더링하는 함수
-const renderToLog = ({operation : mark, prevResult, number, result}) => {
+const renderToLog = ({
+  operation: mark,
+  prevResult,
+  number,
+  result
+}) => {
 
   // li 태그 생성
   const $newLi = document.createElement('li');
   $newLi.classList.add('log-entries-item');
   $newLi.textContent = `#${++seq}. ${prevResult} ${mark} ${number} = ${result}`;
-  
+
   // ul에 추가
   $logEntries.appendChild($newLi);
 };
 
 
-
-
 // 연산 버튼 이벤트 핸들러
-const addHandler = () => {
-  calculate('ADD');
-}
-
-const subtractHandler = () => {
-  calculate('SUB');
-}
-
-const multiplyHandler = () => {
-  calculate('MUL');
-}
-
-const divideHandler = () => {
-  calculate('DIV');
-}
+const addHandler = () => calculate('ADD');
+const subtractHandler = () => calculate('SUB');
+const multiplyHandler = () => calculate('MUL');
+const divideHandler = () => calculate('DIV');
 
 // 이벤트 핸들러 바인딩
 $btnAdd.addEventListener('click', addHandler);
