@@ -1,7 +1,5 @@
-
-
 function caseUp($icon) {
-  
+
   // 1. #begin인 em의 숫자값을 선택한 값 + 1로 변경
   document.getElementById('begin').textContent = +$icon.dataset.iconNumber + 1;
 
@@ -17,9 +15,9 @@ function caseUp($icon) {
   // 삭제되는 요소는 자신의 이전 형제 요소를 지목해 놓고 삭제된다
   // 삭제되는 요소가 1번 아이콘인 경우 이전 요소가 없기 때문에 $delTarget이 null이 됨
   // delTarget이 null이 되는 순간 반복문을 종료시키겠다는 조건식을 작성
-  
+
   while ($delTarget) {
-    
+
     const $nextTarget = $delTarget.previousElementSibling;
     $numbers.removeChild($delTarget);
 
@@ -30,7 +28,7 @@ function caseUp($icon) {
 
 
 function caseDown($icon) {
-  
+
   // 1. #end인 em의 숫자값을 선택한 값 -1로 변경
   document.getElementById('end').textContent = +$icon.dataset.iconNumber - 1;
 
@@ -46,35 +44,36 @@ function caseDown($icon) {
   // 삭제되는 요소는 자신의 이전 형제 요소를 지목해 놓고 삭제된다
   // 삭제되는 요소가 1번 아이콘인 경우 이전 요소가 없기 때문에 $delTarget이 null이 됨
   // delTarget이 null이 되는 순간 반복문을 종료시키겠다는 조건식을 작성
-  
+
   while ($delTarget) {
-    
+
     const $nextTarget = $delTarget.nextElementSibling;
     $numbers.removeChild($delTarget);
 
     $delTarget = $nextTarget;
   }
 
-  
+
 }
 
 
 function correctAnswer($icon) {
-  
-  // 1. #finish 박스에 class 'show' 부여
-    const $finish = document.getElementById('finish');
 
-    $icon.addEventListener('click', () => {
-      $finish.classList.add('show');
-      $icon.id = "move";
-    });
+  // 1. #finish 박스에 class 'show' 부여
+  const $finish = document.getElementById('finish');
+  $finish.classList.add('show');
   
   // 2. #numbers 클릭 이벤트 해제
-  // $numbers.onclick = null;
-
+  document.getElementById('numbers').onclick = null;
+  
   // 3. 사용자가 선택한 아이콘에 id 'move' 추가
-    
+  $icon.id = "move";
+
 }
 
 
-export {caseUp, caseDown, correctAnswer};
+export {
+  caseUp,
+  caseDown,
+  correctAnswer
+};

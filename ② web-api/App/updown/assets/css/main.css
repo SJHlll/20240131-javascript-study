@@ -182,3 +182,24 @@ section.main .number-wrapper h2 em {
       z-index: 100;
   }
 }
+
+/* 정답아이콘에 id="move"가 붙으면 아이콘이 커지면서
+움직이는 애니메이션 */
+.icon#move {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  z-index: 10;
+  border: 4px dashed #000;
+  animation: move 1s linear forwards;
+}
+@keyframes move {
+  0% {
+      top: 0;
+      transform: translateX(0) rotate(0) scale(1);
+  }
+  100% {
+      top: 10%;
+      transform: translateX(-50%) rotate(720deg) scale(2);
+  }
+}
